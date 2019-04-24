@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Aliança</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-mob.css">
+
+    <!--Fontes-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!--API do Google Maps-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJyqxbdk2g9wl3PzGQy5V6mAYcHv0HZvo"></script>
+
+    <!--Lib-->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <!--JS do Google Maps-->
+    <script type="text/javascript">
+        var map;
+        var centerPos = new google.maps.LatLng(-22.954968, -43.191591);
+        var zoomLevel = 16;
+
+        function initialize() {
+            var mapOptions = {
+                center: centerPos,
+                zoom: zoomLevel
+            };
+            map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            var locations = [
+                ['First Shoppe', -22.949109, -43.190603],
+                ['Second Shoppe', -22.952191, -43.190227],
+                ['Third Shoppe', -22.950672, -43.188331],
+                ['Fourth Shoppe', -22.949190, -43.186164],
+                ['Fifth Shoppe', -22.955216, -43.186603],
+                ['Sixth Shoppe', -22.957414, -43.190130],
+            ];
+            var image = 'img/png/LOGO_NA_simbolo.png';
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    title: locations[i][0],
+                    map: map,
+                    icon: image
+                });
+            }
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///Obrigado pela oportunidade de fazer parte desde processo seletivo para esta grande equipe e grande empresa//
+    ///espero que gostem e que eu possa dar continuidade no processo e conseguir esta vaga incrivel!///////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--Cabeçalho-->
+    <header>
+        <img class="logo-desk" src="img/png/LOGO_NA_SEMSIMBOLO.png" alt="">
+        <img class="logo-mob" src="img/png/LOGO_NA_simbolo.png">
+        <div class="busca" type="text">
+            <img src="img/png/SEARCH_ICON.png" alt="" class="buscar">
+            <input type="text" placeholder="    Botafogo, Rio de Janeiro">
+            <img src="img/svg/Icones-GPS.svg" alt="logo" class="gps">
+        </div>
+        <div class="menu">
+        </div>
+    </header>
+    <!--/////////////////////////////////////////////-->
+
+
+
+    <!--Menu Desk / Mobile-->
+    <button id="burger" class="open-main-nav">
+        <span class="burger"></span>
+        <span class="burger-text">Menu</span>
+    </button>    
+    <nav class="main-nav" id="main-nav">
+        <ul>
+            <li>
+                <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            </li>
+            <li>
+                <a href="#"><i class="far fa-star"></i> Sobre</a>
+            </li>
+            <li>
+                <a href="#"><i class="far fa-heart"></i> Mais visitados</a>
+            </li>
+            <li>
+                <a href="#"><i class="far fa-smile-wink"></i> Ofertas</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-phone"></i> Contato</a>
+            </li>
+        </ul>    
+    </nav>
+    <!--////////////////////////////////////////////////////-->    
+
+    <!--Mapa-->
+    <div class="wrap">
+        <div id="map-canvas"></div>
+    </div>
+    <!--/////////////////////////////////////////////////-->
+
+    <!--Inicio da sessão de Imoveis-->
+    <section>
+        <!--Barra de botões Filtrar e Ordenar-->
+        <div class="filt-org">
+            <h3 class="botafogo">Imoveis para alugar em Botafogo</h3>
+            <div class="btn">
+                <img type="button" src="img/png/btn-btn_filtrar_off@2x.png" alt="" class="filtrar">
+                <img type="button" src="img/png/btn-btn_ordenar_off@2x.png" alt="" class="ordenar" onclick="ordenar()">
+            </div>
+        </div>
+        <!--Fim da Barra de botões Filtrar e Ordenar-->
+
+        <img src="img/png/btn-btn_ordenar2_off.png" alt="" class="ordenar-mob">
+        <!--Botão mobile-->
+
+        <!--IMOVEIS-->
+        <ul class="container flex scroll">
+            <li class="imovel" id="lista" data-category="match">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="1"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="1"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                            <img src="img/png/icons-match.png" alt="" class="match">
+                        <div class="imagem" id="1">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.00.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel" data-category="match">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="2"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="2"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                            <img src="img/png/icons-match.png" alt="" class="match">                        
+                        <div class="imagem" id="2">
+                            <img src="img/imoveis/imagem4.jpeg" alt="">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$100.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel" data-category="match">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="3"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="3"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                            <img src="img/png/icons-match.png" alt="" class="match">                        
+                        <div class="imagem" id="3">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                            <img src="img/imoveis/imagem3.jpg" alt="">
+                            <img src="img/imoveis/imagem4.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+
+            </li>
+            <li class="imovel" data-category="match">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="4"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="4"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="4">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="5"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="5"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="5">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="6"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="6"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="6">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="7"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="7"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="7">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="8"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="8"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="8">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="9"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="9"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="9">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="10"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="10"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="10">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="11"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="11"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="11">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <li class="imovel">
+                <div class="img-imovel">
+                    <div class="pelicula">
+                        <button class="left" data-id="12"><i class="fas fa-chevron-left" style="color: #fff"></i></button>
+                        <button class="right" data-id="12"><i class="fas fa-chevron-right" style="color: #fff"></i></button>
+                        <div class="imagem" id="12">
+                            <img src="img/imoveis/imagem1.jpg" alt="">
+                            <img src="img/imoveis/imagem2.jpg" alt="">
+                        </div>
+                        <img class="duplex" src="img/png/tag_duplex.png" alt="">
+                    </div>
+                </div>
+                <div class="sobre">
+                    <h3 class="preco">R$10.000.000 <small>180 M2</small></h3>
+                    <p class="endereco">Rua Voluntários da Pátria, Bota…</p>
+                    <p class="descricao">3 quartos, 3 banheiros, 2 vagas</p>
+
+                </div>
+                <img src="img/png/004-like.png" class="like">
+            </li>
+            <!--Fim Imoveis-->
+            <button class="filtrar-mob" data-category="match"><i class="fas fa-filter"></i> FILTRAR</button>
+            <!--Botão mobile-->
+        </ul>
+       
+    </section>
+
+
+
+          
+          
+
+
+    <!--Fim sessão de Imoveis-->
+
+    <!-- Modal -->
+    
+    <!--Menu Mobile-->
+    <script src="js/menu.js"></script>
+
+    <!--Filtrar-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
+    <script src="js/index.js"></script>
+
+    <!--jQuery para função-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <!--/////////////////////////////////////////////-->
+
+
+
+    <!--Função do caroussel-->
+    <script>
+        $(document).ready(function(){
+            $(".right").on("click", function () {
+                var id = $(this).data("id");
+                var imgWidth = $("#" + id).children("img").width();
+
+                $("#" + id).animate({
+                    scrollLeft: '+=' + imgWidth
+                });
+            });
+
+            $(".left").on("click", function () {
+                var id = $(this).data("id");
+                var imgWidth = $("#" + id).children("img").width();
+
+                $("#" + id).animate({
+                    scrollLeft: '-=' + imgWidth
+                });
+            });
+        });
+    </script>
+    <!--//////////////////////////////////////////////-->
+
+</body>
+
+</html>

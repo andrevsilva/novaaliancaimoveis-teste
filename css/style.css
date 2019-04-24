@@ -1,0 +1,663 @@
+@font-face {
+    font-family: 'hurme-geometric-regular';
+    src: url(../fonts/hurme-geometric-regular.ttf);    
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #fff;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    height: 78px;
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(65, 55, 55, 0.1);    
+}
+.logo-desk{
+    position: absolute;
+    margin-top: 24px;
+    margin-left: 26px;
+}
+.logo-mob{
+    display: none;
+}
+.busca{
+    background: #fff;
+    width: 549px;
+    height: 48px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.1);
+    margin-left: 41%;
+    margin-top: 14px;
+    position: fixed;
+}
+.busca > input {
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 19px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #D8D8D8;
+    padding: 6px;
+    font-family: 'hurme-geometric-regular';
+    width: 50%;
+}
+.gps{
+    width: 18px;
+    height: 18px;   
+    margin-left: 518px;
+    margin-top: 12px;
+}
+.buscar{
+    display: none;
+}
+.menu{
+    margin-right: 25px;
+    margin-top: 16px;
+    position: relative;
+    float: right;
+}
+section{
+    width: 70%;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.12);
+    margin-top: -766px;
+}
+.filt-org{
+    background: rgba(243, 243, 243, 1);
+    width: 100%;
+    height: 52px;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.1);   
+    margin-top: 5px;     
+}
+.botafogo{
+    font-family: 'hurme-geometric-regular';
+    float: left;
+    color: #F84B00;
+    font-size: 18px;
+    margin-top: 16px;
+    margin-left: 69px;
+    text-align: left;
+    position: absolute;
+
+}
+.btn{
+    position: relative;
+    margin-left: 60%;  
+}
+.filtrar{
+    width: 101px;
+    height: 24px;
+    margin-top: 15px;
+    margin-right: 27px;
+}
+.filtrar:hover{
+    cursor: pointer;
+}
+.filtrar-mob{
+    display: none;
+}
+.ordenar{
+    width: 101px;
+    height: 25px;
+    margin-top: 14px;
+    margin-right: 55px;
+}
+.ordenar:hover{
+    cursor: pointer;
+}
+.ordenar-mob {
+    display: none;
+}
+
+/* =================== SESSÃO DOS IMOVEIS ================ */
+.container{
+    height: calc(100vh - 116px);
+    overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 160px;
+  }
+   
+  .scroll::-webkit-scrollbar-thumb {
+    background: rgba(163, 163, 163, 1);
+    border-radius: 20px;
+    height: 160px;
+  }
+  
+  .scroll::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+  }
+li, ul{
+    list-style: none;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imovel{
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    width: 264px;
+    height: 326px;
+    margin: 21px;
+}
+.img-imovel{
+    width: 264px;
+    height: 223px;
+    position: relative;
+
+}
+.imagem{
+    width: 264px;
+    height: 223px;
+    overflow: auto;
+    display: flex;
+}
+
+.imagem img{
+    width: 264px;
+    height: 223px;
+}
+.imagem::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+  }
+   
+  .imagem::-webkit-scrollbar-thumb {
+    background: rgba(163, 163, 163, 1);
+    border-radius: 20px;
+    height: 6px;
+  }
+  
+  .imagem::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+  }
+
+.duplex{
+    position: relative;
+    float: right;
+    margin-top: -43px;
+    z-index: 10;
+}
+.sobre{
+    padding: 29px;
+}
+.preco{
+    font-family: 'hurme-geometric-regular';
+    color: #F84B00;
+}
+.endereco{
+    color: rgba(163, 163, 163, 1);
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.descricao{
+    font-size: 12px;
+    color: rgba(100, 100, 100, 1);
+    font-family: 'Open Sans', sans-serif;    
+}
+small{
+    font-size: 11px;
+    margin-left: 35px;
+}
+.like{
+    float: right;
+    margin-top: -70px;
+    margin-right: 6%;
+    border-left: 1px solid rgba(100, 100, 100, 1);
+    padding: 12px;
+}
+.match{
+    position: absolute;
+    z-index: 30;
+    margin-left: 80%;
+    margin-top: 10px;
+}
+.img{
+	width: 200px;
+	height: 200px;
+	overflow: auto;
+	display: flex;
+}
+  .right {
+    background: rgba(0, 0, 0, 0.3);      
+    width: 50px;
+    height: 100%;
+    border: none;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 5;
+    margin-top: 112px;
+    
+  }
+  .left {
+    background: rgba(0, 0, 0, 0.3);      
+    width: 50px;
+    height: 100%;
+    border: none;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 5;
+    margin-top: 112px;
+    
+  } 
+  .left:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .right:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+    cursor: pointer;
+  }  
+  button.right {
+    right: 0;
+  }
+  .pelicula{
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 9;
+  }
+  .picture {
+    width: 264px;
+    height: 223px;
+    overflow: auto;
+    display: flex;
+  }
+  
+  /* ====================== MAPA ==========================**/
+  .wrap { 
+    height:768px; 
+    margin-left: 70%;
+}
+  #map-canvas { 
+    height: 100%; 
+    width: 100%;
+}
+
+/*======================= MODAL =============================*/
+
+
+
+/* ======================== MOBILE ========================== */
+@media (min-width: 1025px) and (max-width: 1145px) {
+  
+    body{
+        background: ;
+    }
+    section{
+        width: 100%;
+    }
+    .imovel{
+        width: 318px;
+        height: 325px;
+    }
+    .img-imovel{
+        width: 318px;
+        height: 223px;
+    }
+    .imagem{
+        width: 318px;
+        height: 223px;
+        overflow: auto;
+        display: flex;
+    }
+    .imagem img{
+        width: 100%;
+    }       
+    #map-canvas{
+        display: none;
+    }
+    .busca{
+        font-size: 12px;
+        margin-left: 25%;
+        
+    }   
+        
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    body{
+        background:;
+    }
+    section{
+        width: 100%;
+    }
+    .busca{
+        background: transparent;
+        box-shadow: none;
+        font-size: 12px;
+        margin-left: 25%;        
+    }
+    .gps{
+        display: none;
+    }
+    .buscar{
+        display: initial; 
+        margin-top: 16px;
+        margin-left: 15px;
+        position: absolute;
+        z-index: 1;       
+    }    
+    #map-canvas{
+        display: none;
+    }
+
+    .logo-desk{
+        display: none;
+    }
+    .logo-mob{
+        display: flex;
+        position: absolute;
+        margin-top: 24px;
+        margin-left: 26px;        
+    }
+    .imovel{
+        width: 318px;
+        height: 325px;
+    }
+    .img-imovel{
+        width: 318px;
+        height: 223px;
+    }
+    .imagem{
+        width: 318px;
+        height: 223px;
+        overflow: auto;
+        display: flex;
+    }      
+    .imagem img{
+        width: 100%;
+    }   
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    body{
+        background:;
+    }
+    section{
+        width: 100%;
+    }
+    .busca{
+        background: transparent;
+        box-shadow: none;
+    }
+    .gps{
+        display: none;
+    }
+    .buscar{
+        display: initial;   
+        margin-top: 16px;
+        margin-left: 15px;
+        position: absolute;
+        z-index: 1;     
+    }    
+    #map-canvas{
+        display: none;
+    }
+    .busca{
+        font-size: 12px;
+        margin-left: 25%;
+    }
+    .logo-desk{
+        display: none;
+    }
+    .logo-mob{
+        display: flex;
+        position: absolute;
+        margin-top: 24px;
+        margin-left: 26px;        
+    }
+    .imovel{
+        width: 318px;
+        height: 325px;
+    }
+    .img-imovel{
+        width: 318px;
+        height: 223px;
+    } 
+    .imagem{
+        width: 318x;
+        height: 223px;
+        overflow: auto;
+        display: flex;
+    }   
+    .imagem img{
+        width: 100%;
+    }      
+
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    body{
+        background:;
+    }
+    section{
+        width: 100%;
+    }
+    .busca{
+        background: transparent;
+        box-shadow: none;
+    }
+    .gps{
+        display: none;
+    }
+    .buscar{
+        display: initial;  
+        margin-top: 16px;
+        margin-left: 15px;
+        position: absolute;
+        z-index: 1;      
+    }    
+    .filtrar{
+        display: none;
+    }
+    #map-canvas{
+        display: none;
+    }
+    .busca{
+        font-size: 12px;
+        margin-left: 25%;
+    }
+    .logo-desk{
+        display: none;
+    }
+    .logo-mob{
+        display: flex;
+        position: absolute;
+        margin-top: 24px;
+        margin-left: 26px;        
+    }
+    .imovel{
+        width: 318px;
+        height: 325px;
+    }
+    .img-imovel{
+        width: 318px;
+        height: 223px;
+    }    
+    .imagem{
+        width: 318px;
+        height: 223px;
+        overflow: auto;
+        display: flex;
+    }    
+    .imagem img{
+        width: 100%;
+    }   
+    .filt-org{
+        display: none;        
+    }    
+    .ordenar-mob{
+        display: initial;
+        margin-left: 84%;   
+        margin-right: 21px;
+        margin-top: 12px;     
+    }    
+    .filtrar-mob{
+        width: 100%;
+        background: #F84B00;
+        color: #fff;
+        font-family: 'hurme-geometric-regular';
+        font-size: 15px;
+        display: initial;
+    }    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    body{
+        background:;
+    }
+    section{
+        width: 100%;
+    }
+    .busca{
+        background: transparent;
+        box-shadow: none;
+        width: 60%;
+    }
+    .gps{
+        display: none;
+    }
+    .buscar{
+        display: initial;       
+        margin-top: 16px;
+        margin-left: 15px;
+        position: absolute;
+        z-index: 1; 
+    }
+    .filtrar{
+        display: none;
+    }
+    #map-canvas{
+        display: none;
+    }
+    .busca{
+        font-size: 12px;
+        margin-left: 25%;
+    }
+    .logo-desk{
+        display: none;
+    }
+    .logo-mob{
+        display: flex;
+        position: absolute;
+        margin-top: 24px;
+        margin-left: 26px;        
+    }
+    .imovel{
+        width: 100%;
+        height: 325px;
+    }
+    .img-imovel{
+        width: 100%;
+        height: 223px;
+    }  
+    .imagem{
+        width: 100%;
+        height: 223px;
+        overflow: auto;
+        display: flex;
+    }
+    .imagem img{
+        width: 100%;
+    }      
+    .filt-org{
+        display: none;        
+    }    
+    .ordenar-mob{
+        display: initial;
+        margin-left: 70%;  
+        margin-top: 12px;      
+
+    }
+    .filtrar-mob{
+        width: 100%;
+        height: 48px;
+        background: #F84B00;
+        color: #fff;
+        font-family: 'hurme-geometric-regular';
+        font-size: 15px;
+        display: initial;
+        border-radius: 5px 5px 5px 5px;
+    }
+    
+  }
+
+
+/* Refatorado lista de imoveis */
+.scroll{
+    padding-right: 21px;
+}
+
+.imovel{
+    width: calc(100% - 21px);
+    margin: 0;
+    margin-left: 21px;
+    margin-top: 21px;
+}
+
+@media screen and (min-width: 768px){
+    .imovel{
+        width: calc((100% / 2) - 21px);
+    }
+}
+
+@media screen and (min-width: 992px){
+    .imovel{
+        width: calc((100% / 3) - 21px);
+    }
+}
+
+.img-imovel{
+    width: 100%;
+}
+
+.left, .right{
+    margin-top: 0;
+    top: 50%;
+}
+
+.imagem{
+    width: 100%;
+}
+
+.imagem img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
